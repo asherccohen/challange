@@ -1,5 +1,11 @@
 A simple assessment around closures, asynchronous coding and algorithms with test.
 
+## Installation
+
+### `npm install`
+
+Installs node_modules.<br>
+
 ## Available Scripts
 
 In the project directory, you can run:
