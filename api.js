@@ -38,6 +38,24 @@ const XMLHttpRequest = () => {
 };
 
 // SOLUTION 2
+// A more modern approach would be to use fetch API, which wraps our response in a promise by default
+/*   fetch('https://jsonplaceholder.typicode.com/posts/1')
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+          error = new Error(errorMessage);
+        throw error;
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      console.log(body.title);
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`)); */
+
+// SOLUTION 3
 // In node we can use the https module
 const https = () => {
   return new Promise(function(resolve, reject) {
@@ -73,7 +91,7 @@ const https = () => {
   });
 };
 
-// SOLUTION3
+// SOLUTION 4
 // In node we can also use the request module
 const request = () => {
   return new Promise(function(resolve, reject) {
